@@ -1,0 +1,44 @@
+.addBtn {
+    color: white;
+    padding: 5px;
+    background-color: rgb(92, 198, 92);
+    border: none;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.deleteBtn {
+
+    color: white;
+    padding: 5px;
+    background-color: rgb(247, 99, 79);
+    border: none;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    margin: 20px;
+    text-transform: uppercase;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 40% 5% auto;
+    margin-left: 20px;
+}
+
+.grid-item {
+    word-wrap: break-word;
+}
+
+.name,
+.phone {
+    color: grey;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
