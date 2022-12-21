@@ -18,7 +18,7 @@ class App extends Component {
     ]
     return (
       <>
-       <Header />
+       <Header heading="Phone Directory" />
         <button className="addBtn">Add</button>
         <div className="grid-container">
           <span className="grid-item name">Name</span><br />
