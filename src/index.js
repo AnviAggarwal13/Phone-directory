@@ -6,6 +6,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 //import AddSubscriber from './AddSubscriber';
 import PhoneDirectory from './PhoneDirectory';
+import AddSubscriber from './AddSubscriber';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
