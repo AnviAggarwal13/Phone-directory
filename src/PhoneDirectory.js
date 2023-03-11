@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AddSubscriber from './AddSubscriber';
 import ShowSubscribers from './ShowSubscribers';
+import {BrowserRouter, Routes,Route} from "react-router-dom";
 
 class PhoneDirectory extends Component{
     constructor(){
@@ -8,7 +9,7 @@ class PhoneDirectory extends Component{
         this.state={
             subscriberList:[{
                 id: 1,
-                name: 'Shilpa',
+                name: 'Shilpa', 
                 phone: '98989'
             },
             {
@@ -28,15 +29,19 @@ class PhoneDirectory extends Component{
         }
         subscriberList.push(newSubscriber);
         this.setState({subscriberList:subscriberList});
-        console.log("Phone directory")
-        console.log(this.state.subscriberList)
-
     }
+
     render(){
         return(
-            // <AddSubscriber AddSubscriberHandler={this.AddSubscriberHandler}/>
-            <ShowSubscribers subscriberList={this.state.subscriberList}/>
-        )
+            <BrowserRouter>
+            <div>
+                <Routes>
+                <Route exact path='/' render={(props)=> <ShowSubscribers {...props} subscriberList={this.state.subscriberList}/>}/>
+                <Route exact path='/add' render={({history}, props)=> <AddSubscriber history={history} {...props} AddSubscriberHandler={this.state.AddSubscriberHandler}/>} />
+                </Routes>
+            </div>
+            </BrowserRouter>
+        );
     }
 }
 

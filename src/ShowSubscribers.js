@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from './Header';
 import './ShowSubscribers.css';
+import {Link} from 'react-router-dom';
+
 
  // let sub=[
     //   {
@@ -19,10 +21,10 @@ class ShowSubscribers extends Component {
 
   render(){
    
-    return (
+    return(
       <>
        <Header heading="Phone Directory" />
-        <button className="addBtn">Add</button>
+        <Link to="/add" relative="route"><button className="addBtn">Add</button></Link> 
         <div className="grid-container">
           <span className="grid-item name">Name</span><br />
           <span className="grid-item phone">Phone</span>
