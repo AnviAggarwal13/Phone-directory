@@ -1,59 +1,41 @@
-import React, { Component } from "react";
-import Header from './Header';
+import React, { Component } from 'react';
+import Header from './Header.js';
 import './ShowSubscribers.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-
- // let sub=[
-    //   {
-    //     id:1,
-    //     name:"s",
-    //     phone:"999999"
-    //   },
-    //   {
-    //     id:2,
-    //     name:"h",
-    //     phone:"888888"
-    //   }
-    // ]
 class ShowSubscribers extends Component {
 
-  onDeletedClick=(subscriberId) => {
-    this.props.deleteSubscriberHandler(subscriberId);
+  onDeletedClick = (subscriberId) => {
+    this.props.deleteSubscriberHandler(subscriberId); 
   }
 
-  render(){
-   
-    return(
-      <>
-       <Header heading="Phone Directory" />
-        <Link to="/add" relative="route"><button className="addBtn">Add</button></Link> 
-        <div className="grid-container">
-          <span className="grid-item name">Name</span><br />
-          <span className="grid-item phone">Phone</span>
-        </div>
+  render() {
+    return (
+      <div>
+        <Header heading="Phone Directory" />
+        <div className="component-body-container">
+          <Link to="/add">
+            <button className="custom-btn add-btn">Add</button>
+          </Link>
 
-        {/* <div className="grid-container">
-          <span className="grid-item ">Srishti</span><br />
-          <span className="grid-item ">999999</span>
-        </div>
+          <div className="grid-container heading-container">
+            <span className="grid-item name-heading">Name</span>
+            <span className="grid-item phone-heading">Phone</span>
+          </div>
 
-        <div className="grid-container">
-          <span className="grid-item ">Shilpa</span><br />
-          <span className="grid-item ">888888</span>
-        </div> */}
-        {
-          this.props.subscriberList.map(subs => {
-            return <div key={subs.id} className="grid-container">
-            <span className="grid-item">{subs.name}</span>
-            <span className="grid-item">{subs.phone}</span>
-            <span className="grid-item">
-              <button className="deleteBtn" onClick={this.onDeletedClick.bind(this, subs.id)}>Delete</button>
-            </span>
-            </div>
-          })
-        }
-      </>
+          {
+            this.props.subscribersList.map(sub => {
+              return <div key={sub.id} className="grid-container">
+                <span className="grid-item">{sub.name}</span>
+                <span className="grid-item">{sub.phone}</span>
+                <span className="grid-item action-btn-container">
+                  <button className="custom-btn delete-btn" onClick={this.onDeletedClick.bind(this, sub.id)}>Delete</button>
+                </span>
+              </div>
+            })
+          }
+        </div>
+      </div>
     );
   }
 }

@@ -1,23 +1,12 @@
-import React from "react";
+import React from 'react';
 import './Header.css';
 
-const Header= function(props){
-
-    return(
-            <div className="header">
+const Header = function (props) {
+    return (
+        <div className="header">
             {props.heading}
         </div>
     )
 }
-
-// class Header extends Component {
-//     render() {
-//         return (
-//             <div className="header">
-//                 Phone Directory
-//             </div>
-//         )
-//     }
-// }
 
 export default Header;
